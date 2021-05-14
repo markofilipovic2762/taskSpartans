@@ -1,0 +1,22 @@
+{
+  "name": "markofilipovic-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markofilipovic2762/taskSpartans.git"
+  },
+  "author": "Marko Filipovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markofilipovic2762/taskSpartans/issues"
+  },
+  "homepage": "https://github.com/markofilipovic2762/taskSpartans#readme",
+  "dependencies": {
+    "mongoose": "^5.12.8"
+  }
+}
