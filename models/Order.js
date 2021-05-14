@@ -1,8 +1,13 @@
 import mongoose from 'mongoose'
 
 const orderSchema = mongoose.Schema({
-    ingredients: {
-        type: Array,
+    ingredients: [{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Ingredient'
+    }],
+    size: {
+        type: String,
         required: true
     },
     contact: {
@@ -25,8 +30,8 @@ const orderSchema = mongoose.Schema({
         required: true,
         default: false
     },
-    deliveredAt: {
-        type: Date.now()
+    createdAt: {
+        type: Date
     }
 }, {
     timestamps: true

@@ -1,20 +1,20 @@
 import express from 'express'
 const router = express.Router();
 
+import Admin from "../models/Admin";
 import generateToken from '../utils/generateToken';
 
 router.post('/login', (req, res) => {
     const { email, password } = req.body
 
-    const user = await User.findOne({ email })
+    const admin = await Admin.findOne({ email })
 
-    if (user && (await user.matchPassword(password))) {
+    if (admin && (await admin.matchPassword(password))) {
         res.json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            isAdmin: user.isAdmin,
-            token: generateToken(user._id)
+            _id: admin._id,
+            name: admin.name,
+            email: admin.email,
+            token: generateToken(admin._id)
         })
     } else {
         res.status(401)
